@@ -29,7 +29,8 @@ header {
   }
 
   .right {
-    background-color: blue;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url("https://source.unsplash.com/1920x1080/?mars");
   }
 
   .wrapper {
@@ -38,12 +39,20 @@ header {
     left: calc((100vw - #{$max-width}) / 2);
   }
 
+  .white {
+    position: absolute;
+    top: 10rem;
+    left: 55%;
+    color: white;
+  }
+
   .instructions {
     margin: 1.5rem 0;
     width: 45%;
     .instructionsHeading {
       font-size: 2.25rem;
       font-weight: 500;
+      word-spacing: 100rem;
     }
     .instructionsBody {
       font-size: 2rem;

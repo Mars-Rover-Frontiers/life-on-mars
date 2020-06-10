@@ -369,13 +369,21 @@ header .right {
 }
 
 header .right {
-  background-color: blue;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.5))), url("https://source.unsplash.com/1920x1080/?mars");
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://source.unsplash.com/1920x1080/?mars");
 }
 
 header .wrapper {
   position: absolute;
   top: 0;
   left: calc((100vw - 1200px) / 2);
+}
+
+header .white {
+  position: absolute;
+  top: 10rem;
+  left: 55%;
+  color: white;
 }
 
 header .instructions {
@@ -386,6 +394,7 @@ header .instructions {
 header .instructions .instructionsHeading {
   font-size: 2.25rem;
   font-weight: 500;
+  word-spacing: 100rem;
 }
 
 header .instructions .instructionsBody {
