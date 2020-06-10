@@ -1,0 +1,152 @@
+@import "setup.scss";
+
+$max-width: 1200px;
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+h1 {
+  font-size: 9rem;
+  font-weight: 600;
+  margin-top: 10rem;
+  word-spacing: 1rem;
+  letter-spacing: 1rem;
+}
+
+.wrapper {
+  width: $max-width;
+  margin: 0 auto;
+}
+header {
+  position: relative;
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+
+  .left,
+  .right {
+    width: 50%;
+    height: 100%;
+  }
+
+  .right {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url("https://source.unsplash.com/1920x1080/?mars");
+  }
+
+  .wrapper {
+    position: absolute;
+    top: 0;
+    left: calc((100vw - #{$max-width}) / 2);
+  }
+
+  .white {
+    // position: absolute;
+    // top: 10rem;
+    // left: 55%;
+    color: white;
+  }
+
+  .instructions {
+    margin: 1.5rem 0;
+    width: 45%;
+    .instructionsHeading {
+      font-size: 2.25rem;
+      font-weight: 500;
+    }
+    .instructionsBody {
+      font-size: 2rem;
+      font-weight: 300;
+      line-height: 2rem;
+    }
+  }
+
+  nav {
+    li {
+      font-size: 6rem;
+      font-weight: 300;
+    }
+  }
+}
+
+section {
+  height: 100vh;
+  width: 100vw;
+  padding: 7.5rem 0;
+
+  h2 {
+    font-size: 6rem;
+    font-weight: 600;
+  }
+
+  .flexDiv {
+    padding-top: 5rem;
+    display: flex;
+    justify-content: space-between;
+    form {
+      width: 45%;
+    }
+
+    fieldset {
+      padding: 2rem 0;
+      display: flex;
+      flex-direction: column;
+    }
+
+    label {
+      font-size: 2.5rem;
+      font-weight: 300;
+      padding-bottom: 1rem;
+    }
+
+    input,
+    select,
+    button {
+      width: 60%;
+      padding: 1rem;
+    }
+
+    select {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      -ms-appearance: none;
+      -o-appearance: none;
+      appearance: none;
+      border: 1px solid coral;
+
+      &:focus {
+        border: 1px solid coral;
+        outline: none;
+      }
+    }
+
+    button {
+      // border-radius: 5px;
+      // background-color: coral;
+      // color: white;
+      box-shadow: inset 0px 1px 0px 0px #cf866c;
+      background: linear-gradient(to bottom, #d0451b 5%, #bc3315 100%);
+      background-color: #d0451b;
+      border-radius: 3px;
+      border: 1px solid #942911;
+      display: inline-block;
+      cursor: pointer;
+      color: #ffffff;
+      font-family: Arial;
+      font-size: 13px;
+      padding: 6px 24px;
+      text-decoration: none;
+      text-shadow: 0px 1px 0px #854629;
+    }
+
+    .imgWrapper {
+      width: 45%;
+    }
+
+    img {
+      max-width: 100%;
+      max-height: 100%;
+    }
+  }
+}
