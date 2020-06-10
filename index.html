@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="./styles/style.css" />
   </head>
   <body>
-    <!-- https://source.unsplash.com/1920x1080/?mars, -->
+    <!-- https://source.unsplash.com/1920x1080/?mars -->
     <header>
       <div class="left"></div>
       <div class="right"></div>
@@ -34,6 +34,30 @@
         </nav>
       </div>
     </header>
+    <section>
+      <div class="wrapper">
+        <h2>rover: curiosity</h2>
+        <div class="flexDiv">
+          <form>
+            <fieldset>
+              <label for="camera">select camera (optional)</label>
+              <select name="camera" id="camera">
+                <option value="FHAZ">Front Hazard Camera</option>
+                <option value="RHAZ">Rear Hazard Camera</option>
+              </select>
+            </fieldset>
+            <fieldset>
+              <label for="sol">select date (optional)</label>
+              <input type="number" name="sol" id="sol" min="1" max="1000" />
+            </fieldset>
+            <button id="roverButton">Enter</button>
+          </form>
+          <div class="imgWrapper">
+            <img src="https://source.unsplash.com/800x600/?mars" alt="" />
+          </div>
+        </div>
+      </div>
+    </section>
     <script src="app.js"></script>
   </body>
 </html>
