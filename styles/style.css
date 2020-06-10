@@ -341,3 +341,35 @@ textarea {
 body {
   font-family: "Poppins", sans-serif;
 }
+
+h1 {
+  font-size: 9rem;
+  font-weight: 600;
+  margin-top: 10rem;
+}
+
+.wrapper {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+header .instructions {
+  margin: 1.5rem 0;
+  width: 45%;
+}
+
+header .instructions .instructionsHeading {
+  font-size: 2.25rem;
+  font-weight: 500;
+}
+
+header .instructions .instructionsBody {
+  font-size: 2rem;
+  font-weight: 300;
+  line-height: 2rem;
+}
+
+header nav li {
+  font-size: 6rem;
+  font-weight: 300;
+}
