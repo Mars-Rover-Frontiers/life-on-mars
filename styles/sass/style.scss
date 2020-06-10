@@ -1,5 +1,7 @@
 @import "setup.scss";
 
+$max-width: 1200px;
+
 body {
   font-family: "Poppins", sans-serif;
 }
@@ -11,10 +13,31 @@ h1 {
 }
 
 .wrapper {
-  width: 1200px;
+  width: $max-width;
   margin: 0 auto;
 }
 header {
+  position: relative;
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+
+  .left,
+  .right {
+    width: 50%;
+    height: 100%;
+  }
+
+  .right {
+    background-color: blue;
+  }
+
+  .wrapper {
+    position: absolute;
+    top: 0;
+    left: calc((100vw - #{$max-width}) / 2);
+  }
+
   .instructions {
     margin: 1.5rem 0;
     width: 45%;

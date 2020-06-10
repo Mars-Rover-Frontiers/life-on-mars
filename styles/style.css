@@ -353,6 +353,31 @@ h1 {
   margin: 0 auto;
 }
 
+header {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+}
+
+header .left,
+header .right {
+  width: 50%;
+  height: 100%;
+}
+
+header .right {
+  background-color: blue;
+}
+
+header .wrapper {
+  position: absolute;
+  top: 0;
+  left: calc((100vw - 1200px) / 2);
+}
+
 header .instructions {
   margin: 1.5rem 0;
   width: 45%;
