@@ -9,9 +9,7 @@ api key
 o50slHLqJd3LnaWMAegD0nN5q83KIAw7CicARCKX
 
 
-
 in app 
-
 
 
 when user clicks on nav link, show element
@@ -32,6 +30,7 @@ app.apiKey = 'o50slHLqJd3LnaWMAegD0nN5q83KIAw7CicARCKX';
 
 app.url = 'https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos';
 
+app.formSection = $('.formSection'); 
 
 // Objects 
 app.curiosity = {
@@ -54,6 +53,7 @@ app.opportunity = {
 
 app.curiosity.element.click(() => {
     console.log(app.curiosity.name);
+    app.formSection.show();
 }); 
 
 app.spirit.element.click(() => {
