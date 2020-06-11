@@ -52,6 +52,18 @@ app.opportunity = {
     cameras: ['FHAZ', 'RHAZ', 'NAVCAM', 'PANCAM', 'MINITES']
 };
 
+app.curiosity.element.click(() => {
+    console.log(app.curiosity.name);
+}); 
+
+app.spirit.element.click(() => {
+    console.log(app.spirit.name);
+});
+
+app.opportunity.element.click(() => {
+    console.log(app.opportunity.name);
+});
+
 app.currentRover = '';
 
 app.currentCamera = '';
