@@ -51,17 +51,26 @@ app.opportunity = {
     cameras: ['FHAZ', 'RHAZ', 'NAVCAM', 'PANCAM', 'MINITES']
 };
 
-app.curiosity.element.click(() => {
-    console.log(app.curiosity.name);
+
+app.loadRovers = function(rovers) {
     app.formSection.show();
+    console.log(rovers.name);
+    console.log(rovers.cameras);
+
+    
+};
+
+app.curiosity.element.click(() => {
+    app.loadRovers(app.curiosity);
+    
 }); 
 
 app.spirit.element.click(() => {
-    console.log(app.spirit.name);
+    app.loadRovers(app.spirit);
 });
 
 app.opportunity.element.click(() => {
-    console.log(app.opportunity.name);
+    app.loadRovers(app.opportunity);
 });
 
 app.currentRover = '';
