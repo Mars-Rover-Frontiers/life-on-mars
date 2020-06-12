@@ -28,13 +28,27 @@ $(document).ready(function () {
  
 app.apiKey = 'o50slHLqJd3LnaWMAegD0nN5q83KIAw7CicARCKX';
 
-app.url = 'https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos';
+app.url = 'https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&camera=FHAZ&api_key=o50slHLqJd3LnaWMAegD0nN5q83KIAw7CicARCKX';
 
 app.formSection = $('.formSection'); 
 
 app.roverHeading = $('#roverName');
 
 app.cameraSelection = $('#camera');
+
+app.makeRequest = function() {
+    console.log(this.url);
+    $.ajax({
+        url: this.url,
+        method: 'GET',
+        dataType: 'json'
+      }).then(function() {
+        console.log('It worked!');
+      }).catch(function() {
+          console.log('problem');
+      });
+};
+
 
 // Objects 
 app.curiosity = {
@@ -58,13 +72,12 @@ app.opportunity = {
 
 app.loadRovers = function(rovers) {
     app.formSection.show();
-    console.log(rovers.name);
-    console.log(rovers.cameras);
     app.roverHeading.text(`rover: ${rovers.name}`);    
     app.cameraSelection.empty();
     rovers.cameras.forEach(item => {
         app.cameraSelection.append(`<option value=${item}>${item}</option>`);
     }); 
+    app.makeRequest();
 };
 
 app.curiosity.element.click(() => {
