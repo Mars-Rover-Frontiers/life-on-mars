@@ -32,6 +32,10 @@ app.url = 'https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos';
 
 app.formSection = $('.formSection'); 
 
+app.roverHeading = $('#roverName');
+
+app.cameraSelection = $('#camera');
+
 // Objects 
 app.curiosity = {
     element: $('#curiosityLink'),
@@ -56,13 +60,15 @@ app.loadRovers = function(rovers) {
     app.formSection.show();
     console.log(rovers.name);
     console.log(rovers.cameras);
-
-    
+    app.roverHeading.text(`rover: ${rovers.name}`);    
+    app.cameraSelection.empty();
+    rovers.cameras.forEach(item => {
+        app.cameraSelection.append(`<option value=${item}>${item}</option>`);
+    }); 
 };
 
 app.curiosity.element.click(() => {
-    app.loadRovers(app.curiosity);
-    
+    app.loadRovers(app.curiosity);    
 }); 
 
 app.spirit.element.click(() => {
