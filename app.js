@@ -43,7 +43,8 @@ $(document).ready(function () {
           throw Error("EMPTY SOURCE, so we made a new call.");
         }
         console.log(data);
-        app.image.attr("src", data.photos[0].img_src);
+        // app.image.attr("src", data.photos[0].img_src);
+        app.image.css("background-image", `url(${data.photos[0].img_src})`);
       })
       .catch(function () {
         console.log("Error: Something went wrong with the API request");
@@ -64,7 +65,7 @@ $(document).ready(function () {
     landingDate: "August 6th, 2012",
     distanceCovered: "21.61 Kilometers",
     status: "Operational",
-    cameras: ["FHAZ", "RHAZ", "MAST", "CHEMCAM", "MAHALI", "MARDI", "NAVCAM"],
+    cameras: ["FHAZ", "RHAZ", "MAST", "CHEMCAM", "MAHLI", "MARDI", "NAVCAM"],
   };
 
   app.spirit = {
@@ -89,6 +90,13 @@ $(document).ready(function () {
 
   app.loadRovers = function (rover) {
     app.formSection.show();
+
+    $([document.documentElement, document.body]).animate(
+      {
+        scrollTop: app.formSection.offset().top,
+      },
+      1000
+    );
 
     app.currentRover = rover.name;
     app.roverHeading.text(`rover: ${rover.name}`);
