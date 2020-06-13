@@ -42,6 +42,8 @@ $(document).ready(function () {
 
   app.formSubmit = $("#roverButton");
 
+  app.image = $("#image");
+
   app.makeRequest = function () {
     $.ajax({
       url: this.url,
@@ -53,8 +55,14 @@ $(document).ready(function () {
         api_key: app.apiKey,
       },
     })
-      .then(function () {
-        console.log("Success: We got an image!");
+      .then(function (data) {
+        if (data.photos.length === 0) {
+          console.log("Undefined, so making new request");
+          app.currentSol = Math.floor(Math.random() * 1000) + 1;
+          app.makeRequest();
+          throw Error("EMPTY SOURCE, so we made a new call.");
+        }
+        app.image.attr("src", data.photos[0].img_src);
       })
       .catch(function () {
         console.log("Error: Something went wrong with the API request");
@@ -112,8 +120,10 @@ $(document).ready(function () {
 
   app.formSubmit.click((e) => {
     e.preventDefault();
-    app.currentSol = app.solSelection.value;
-    app.currentCamera = app.cameraSelection.value;
+    app.currentSol =
+      app.solSelection.val() || Math.floor(Math.random() * 1000) + 1;
+    console.log(app.currentSol);
+    app.currentCamera = app.cameraSelection.val();
     app.makeRequest();
   });
 });
