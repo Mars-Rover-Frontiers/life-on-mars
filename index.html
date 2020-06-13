@@ -42,27 +42,29 @@
       <div class="wrapper">
         <h2 id="roverName">rover: curiosity</h2>
         <div class="flexDiv">
-          <div class="roverDescription">
-            <h3>Launch Date:</h3>
-            <p id="launchDate"></p>
-            <h3>Landing Date:</h3>
-            <p id="landingDate"></p>
-            <h3>Distance Covered:</h3>
-            <p id="distanceCovered"></p>
-            <h3>Status:</h3>
-            <p id="status"></p>
-          </div>
-          <form>
-            <fieldset>
-              <label for="camera">select camera (optional)</label>
-              <select name="camera" id="camera">
-                <option value="FHAZ">Front Hazard Camera</option>
-                <option value="RHAZ">Rear Hazard Camera</option>
-              </select>
-            </fieldset>
+          <div class="nonImage">
+            <div class="roverDescription">
+              <h3>Launch Date:</h3>
+              <p id="launchDate"></p>
+              <h3>Landing Date:</h3>
+              <p id="landingDate"></p>
+              <h3>Distance Covered:</h3>
+              <p id="distanceCovered"></p>
+              <h3>Status:</h3>
+              <p id="status"></p>
+            </div>
+            <form>
+              <fieldset>
+                <label for="camera">select camera (optional)</label>
+                <select name="camera" id="camera">
+                  <option value="FHAZ">Front Hazard Camera</option>
+                  <option value="RHAZ">Rear Hazard Camera</option>
+                </select>
+              </fieldset>
 
-            <button id="roverButton">Enter</button>
-          </form>
+              <button id="roverButton">Enter</button>
+            </form>
+          </div>
           <div class="imgWrapper">
             <img
               id="image"

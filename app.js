@@ -19,6 +19,11 @@ $(document).ready(function () {
 
   app.image = $("#image");
 
+  app.launchDate = $("#launchDate");
+  app.landingDate = $("#landingDate");
+  app.distanceCovered = $("#distanceCovered");
+  app.status = $("#status");
+
   app.makeRequest = function () {
     $.ajax({
       url: this.url,
@@ -58,7 +63,7 @@ $(document).ready(function () {
     launchDate: "November 26th, 2011",
     landingDate: "August 6th, 2012",
     distanceCovered: "21.61 Kilometers",
-    state: "Operational",
+    status: "Operational",
     cameras: ["FHAZ", "RHAZ", "MAST", "CHEMCAM", "MAHALI", "MARDI", "NAVCAM"],
   };
 
@@ -84,8 +89,14 @@ $(document).ready(function () {
 
   app.loadRovers = function (rover) {
     app.formSection.show();
+
     app.currentRover = rover.name;
     app.roverHeading.text(`rover: ${rover.name}`);
+    app.launchDate.text(rover.launchDate);
+    app.landingDate.text(rover.landingDate);
+    app.distanceCovered.text(rover.distanceCovered);
+    app.status.text(rover.status);
+
     app.cameraSelection.empty();
     app.url = `${app.baseUrl}${app.currentRover}/photos`;
     console.log(app.url);

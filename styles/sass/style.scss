@@ -84,8 +84,22 @@ section {
     padding-top: 5rem;
     display: flex;
     justify-content: space-between;
-    form {
+    .nonImage {
       width: 45%;
+    }
+
+    .roverDescription {
+      h3,
+      p {
+        display: inline-block;
+        width: 45%;
+        text-transform: lowercase;
+        margin: 0.5rem 0;
+        font-size: 1.25rem;
+      }
+    }
+    form {
+      width: 100%;
     }
 
     fieldset {

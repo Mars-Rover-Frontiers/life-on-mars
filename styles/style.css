@@ -427,8 +427,21 @@ section .flexDiv {
           justify-content: space-between;
 }
 
-section .flexDiv form {
+section .flexDiv .nonImage {
   width: 45%;
+}
+
+section .flexDiv .roverDescription h3,
+section .flexDiv .roverDescription p {
+  display: inline-block;
+  width: 45%;
+  text-transform: lowercase;
+  margin: 0.5rem 0;
+  font-size: 1.25rem;
+}
+
+section .flexDiv form {
+  width: 100%;
 }
 
 section .flexDiv fieldset {
