@@ -38,8 +38,6 @@ $(document).ready(function () {
 
   app.cameraSelection = $("#camera");
 
-  app.solSelection = $("#sol");
-
   app.formSubmit = $("#roverButton");
 
   app.image = $("#image");
@@ -120,9 +118,7 @@ $(document).ready(function () {
 
   app.formSubmit.click((e) => {
     e.preventDefault();
-    app.currentSol =
-      app.solSelection.val() || Math.floor(Math.random() * 1000) + 1;
-    console.log(app.currentSol);
+    app.currentSol = Math.floor(Math.random() * 1000) + 1;
     app.currentCamera = app.cameraSelection.val();
     app.makeRequest();
   });
