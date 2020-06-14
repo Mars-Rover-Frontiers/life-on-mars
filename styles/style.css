@@ -371,20 +371,21 @@ h1 {
 
 .videoHero button {
   color: black;
-  background-color: white;
   border: none;
   border-radius: 20px;
   outline: none;
   width: 15rem;
   font-size: 3rem;
-  text-transform: lowercase;
-  font-weight: 600;
   height: 5rem;
   position: absolute;
   left: 50%;
   bottom: 20%;
   -webkit-transform: translateX(-50%) translateY(-50%);
           transform: translateX(-50%) translateY(-50%);
+}
+
+.videoHero i {
+  height: 100px;
 }
 
 #myVideo {
@@ -410,8 +411,8 @@ header .right {
 }
 
 header .right {
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.5))), url("https://source.unsplash.com/1920x1080/?mars");
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://source.unsplash.com/1920x1080/?mars");
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0))), url("/assets/marsSurface.jpg");
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0)), url("/assets/marsSurface.jpg");
 }
 
 header .wrapper {

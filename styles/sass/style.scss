@@ -34,24 +34,23 @@ h1 {
 
   button {
     color: black;
-    background-color: white;
+    // background-color: white;
     border: none;
     border-radius: 20px;
     outline: none;
     width: 15rem;
     font-size: 3rem;
-    text-transform: lowercase;
-
-    font-weight: 600;
     height: 5rem;
     position: absolute;
     left: 50%;
     bottom: 20%;
     transform: translateX(-50%) translateY(-50%);
   }
-
-  // overflow: hidden;
+  i { 
+    height: 100px;
+  }
 }
+
 
 #myVideo {
   object-fit: cover;
@@ -74,8 +73,8 @@ header {
   }
 
   .right {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-      url("https://source.unsplash.com/1920x1080/?mars");
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0)),
+      url("/assets/marsSurface.jpg");
   }
 
   .wrapper {
