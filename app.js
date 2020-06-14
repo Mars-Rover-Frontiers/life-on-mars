@@ -48,8 +48,6 @@ $(document).ready(function () {
           app.makeRequest();
           throw Error("EMPTY SOURCE, so we made a new call.");
         }
-        console.log(data);
-        // app.image.attr("src", data.photos[0].img_src);
         app.image.css("background-image", `url(${data.photos[0].img_src})`);
         app.enlargedImage.attr("src", `${data.photos[0].img_src}`);
       })
