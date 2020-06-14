@@ -19,6 +19,12 @@ $(document).ready(function () {
 
   app.image = $("#image");
 
+  app.enlargedImageWrapper = $("#enlargedImageWrapper");
+
+  app.enlargedImage = $("#enlargedImage");
+
+  app.closeImage = $("#closeImage");
+
   app.launchDate = $("#launchDate");
   app.landingDate = $("#landingDate");
   app.distanceCovered = $("#distanceCovered");
@@ -45,6 +51,7 @@ $(document).ready(function () {
         console.log(data);
         // app.image.attr("src", data.photos[0].img_src);
         app.image.css("background-image", `url(${data.photos[0].img_src})`);
+        app.enlargedImage.attr("src", `${data.photos[0].img_src}`);
       })
       .catch(function () {
         console.log("Error: Something went wrong with the API request");
@@ -130,5 +137,14 @@ $(document).ready(function () {
     app.currentSol = Math.floor(Math.random() * 1000) + 1;
     app.currentCamera = app.cameraSelection.val();
     app.makeRequest();
+  });
+
+  app.image.click((e) => {
+    e.preventDefault();
+    app.enlargedImageWrapper.show();
+  });
+  app.closeImage.click((e) => {
+    e.preventDefault();
+    app.enlargedImageWrapper.hide();
   });
 });
