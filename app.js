@@ -1,7 +1,6 @@
 let app = {};
 
 $(document).ready(function () {
-
   // Define Core Variables
   app.apiKey = "o50slHLqJd3LnaWMAegD0nN5q83KIAw7CicARCKX";
   app.baseUrl = "https://api.nasa.gov/mars-photos/api/v1/rovers/";
@@ -9,7 +8,7 @@ $(document).ready(function () {
   app.currentRover = "";
   app.currentCamera = "";
   app.currentSol = "";
-  
+
   // Element Selectors
   app.formSection = $(".formSection");
   app.roverHeading = $("#roverName");
@@ -20,10 +19,11 @@ $(document).ready(function () {
   app.distanceCovered = $("#distanceCovered");
   app.status = $("#status");
   app.image = $("#image");
+  app.spinner = $("#spinner");
   app.enlargedImageWrapper = $("#enlargedImageWrapper");
   app.enlargedImage = $("#enlargedImage");
   app.closeImage = $("#closeImage");
-  
+
   // Define Rover Objects
   app.curiosity = {
     element: $("#curiosityLink"),
@@ -52,7 +52,7 @@ $(document).ready(function () {
     status: "Last Contact (June 10, 2018)",
     cameras: ["FHAZ", "RHAZ", "NAVCAM", "PANCAM", "MINITES"],
   };
-  
+
   // Set Event Listeners
   app.curiosity.element.click(() => {
     app.loadRovers(app.curiosity);
@@ -63,9 +63,10 @@ $(document).ready(function () {
   app.opportunity.element.click(() => {
     app.loadRovers(app.opportunity);
   });
-  
+
   app.formSubmit.click((e) => {
     e.preventDefault();
+    app.spinner.show();
     app.currentSol = Math.floor(Math.random() * 1000) + 1;
     app.currentCamera = app.cameraSelection.val();
     app.makeRequest();
@@ -89,7 +90,7 @@ $(document).ready(function () {
 
   app.loadRovers = function (rover) {
     app.formSection.show();
-    
+
     app.currentRover = rover.name;
     app.url = `${app.baseUrl}${app.currentRover}/photos`;
 
@@ -97,7 +98,7 @@ $(document).ready(function () {
     app.launchDate.text(rover.launchDate);
     app.landingDate.text(rover.landingDate);
     app.distanceCovered.text(rover.distanceCovered);
-    app.status.text(rover.status); 
+    app.status.text(rover.status);
     app.cameraSelection.empty();
 
     rover.cameras.forEach((item) => {
@@ -109,10 +110,9 @@ $(document).ready(function () {
         scrollTop: app.formSection.offset().top,
       },
       1000
-      );
+    );
   };
-  
-  
+
   /*
   FUNCTION: makeRequest
   PARAM(S): none
@@ -137,13 +137,17 @@ $(document).ready(function () {
           app.makeRequest();
           throw Error("EMPTY SOURCE, so we made a new call.");
         }
-        app.image.css("background-image", `url(${data.photos[0].img_src})`);
+        app.image.show();
+        app.image.attr("src", `${data.photos[0].img_src}`);
         app.enlargedImage.attr("src", `${data.photos[0].img_src}`);
+        app.enlargedImage.attr(
+          "alt",
+          `Image taken from ${app.currentRover}, via its ${app.currentCamera} camera.`
+        );
+        console.log("attribute added");
       })
       .catch(function () {
         // Do nothing!
       });
   };
-
-  
 });
