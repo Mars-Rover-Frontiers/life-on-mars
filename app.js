@@ -141,7 +141,7 @@ $(document).ready(function () {
         app.enlargedImage.attr("src", `${data.photos[0].img_src}`);
       })
       .catch(function () {
-        console.log("Error: Something went wrong with the API request");
+        // Do nothing!
       });
   };
 
