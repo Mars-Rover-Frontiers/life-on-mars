@@ -99,6 +99,10 @@ $(document).ready(function () {
     app.landingDate.text(rover.landingDate);
     app.distanceCovered.text(rover.distanceCovered);
     app.status.text(rover.status);
+    console.log(rover.status);
+    rover.status === "Operational"
+      ? app.status.css("color", "green")
+      : app.status.css("color", "red");
     app.cameraSelection.empty();
 
     rover.cameras.forEach((item) => {

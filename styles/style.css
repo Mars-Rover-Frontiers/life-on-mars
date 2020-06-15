@@ -379,19 +379,56 @@ a:hover {
   text-align: center;
 }
 
-.videoHero button {
-  color: black;
+.videoHero .scroll-info {
+  text-align: center;
+  color: white;
+  background: none;
   border: none;
   border-radius: 20px;
   outline: none;
   width: 15rem;
-  font-size: 3rem;
   height: 5rem;
   position: absolute;
   left: 50%;
-  bottom: 20%;
+  bottom: 2%;
   -webkit-transform: translateX(-50%) translateY(-50%);
           transform: translateX(-50%) translateY(-50%);
+}
+
+.videoHero .scroll-info i {
+  padding-bottom: 1rem;
+  -webkit-animation: 4s ease-out mouse-jump infinite;
+          animation: 4s ease-out mouse-jump infinite;
+}
+
+@-webkit-keyframes mouse-jump {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  50% {
+    -webkit-transform: translateY(-25px) scale(1.25);
+            transform: translateY(-25px) scale(1.25);
+  }
+  to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes mouse-jump {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  50% {
+    -webkit-transform: translateY(-25px) scale(1.25);
+            transform: translateY(-25px) scale(1.25);
+  }
+  to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
 }
 
 #myVideo {
@@ -487,10 +524,21 @@ section.formSection .flexDiv {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  height: 70%;
 }
 
 section.formSection .flexDiv .nonImage {
   width: 45%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 section.formSection .flexDiv .roverDescription h3,
@@ -504,6 +552,7 @@ section.formSection .flexDiv .roverDescription p {
 
 section.formSection .flexDiv form {
   width: 100%;
+  padding-bottom: 5rem;
 }
 
 section.formSection .flexDiv fieldset {
@@ -569,7 +618,7 @@ section.formSection .flexDiv img {
 
 section.formSection .flexDiv .image-container {
   width: 100%;
-  height: 60%;
+  height: 100%;
   position: relative;
 }
 
@@ -591,7 +640,7 @@ section.formSection .enlargedImageWrapper {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.8);
   position: fixed;
   width: 100%;
   height: 100%;
