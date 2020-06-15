@@ -350,6 +350,16 @@ h1 {
   letter-spacing: 1rem;
 }
 
+a {
+  -webkit-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+}
+
+a:hover {
+  cursor: pointer;
+  color: red;
+}
+
 .wrapper {
   width: 1200px;
   margin: 0 auto;
@@ -384,10 +394,6 @@ h1 {
           transform: translateX(-50%) translateY(-50%);
 }
 
-.videoHero i {
-  height: 100px;
-}
-
 #myVideo {
   -o-object-fit: cover;
      object-fit: cover;
@@ -415,10 +421,25 @@ header .right {
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0)), url("/assets/marsSurface.jpg");
 }
 
-header .wrapper {
+header .text-container {
   position: absolute;
+  height: 100vh;
   top: 0;
   left: calc((100vw - 1200px) / 2);
+  width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
 }
 
 header .white {
@@ -427,7 +448,7 @@ header .white {
 
 header .instructions {
   margin: 1.5rem 0;
-  width: 45%;
+  width: 60%;
 }
 
 header .instructions .instructionsHeading {
@@ -524,19 +545,14 @@ section.formSection .flexDiv select:focus {
 }
 
 section.formSection .flexDiv button {
-  -webkit-box-shadow: inset 0px 1px 0px 0px #cf866c;
-          box-shadow: inset 0px 1px 0px 0px #cf866c;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(5%, #d0451b), to(#bc3315));
-  background: linear-gradient(to bottom, #d0451b 5%, #bc3315 100%);
-  background-color: #d0451b;
+  background-color: red;
   border-radius: 3px;
-  border: 1px solid #942911;
+  border: none;
   display: inline-block;
   cursor: pointer;
   color: #ffffff;
-  font-family: Arial;
   font-size: 13px;
-  padding: 6px 24px;
+  padding: 0.5rem 2rem;
   text-decoration: none;
   text-shadow: 0px 1px 0px #854629;
 }
@@ -578,6 +594,11 @@ section.formSection .enlargedImageWrapper {
 section.formSection .enlargedImageWrapper .enlargedImage {
   max-width: 90%;
   max-height: 90%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 
 section.formSection .enlargedImageWrapper .closeImage {
