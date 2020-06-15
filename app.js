@@ -20,6 +20,7 @@ $(document).ready(function () {
   app.status = $("#status");
   app.image = $("#image");
   app.spinner = $("#spinner");
+  app.imageText = $("#imageText");
   app.enlargedImageWrapper = $("#enlargedImageWrapper");
   app.enlargedImage = $("#enlargedImage");
   app.closeImage = $("#closeImage");
@@ -148,7 +149,7 @@ $(document).ready(function () {
           "alt",
           `Image taken from ${app.currentRover}, via its ${app.currentCamera} camera.`
         );
-        console.log("attribute added");
+        app.imageText.show();
       })
       .catch(function () {
         // Do nothing!
