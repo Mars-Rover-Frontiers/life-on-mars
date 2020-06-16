@@ -10,6 +10,7 @@ $(document).ready(function () {
   app.currentSol = "";
 
   // Element Selectors
+
   app.formSection = $(".formSection");
   app.roverHeading = $("#roverName");
   app.cameraSelection = $("#camera");

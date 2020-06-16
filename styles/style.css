@@ -353,8 +353,8 @@ h1 {
 }
 
 a {
-  -webkit-transition: 0.5s ease-in-out;
-  transition: 0.5s ease-in-out;
+  -webkit-transition: 0.1s ease-in-out;
+  transition: 0.1s ease-in-out;
 }
 
 a:hover {
@@ -363,7 +363,7 @@ a:hover {
 }
 
 .wrapper {
-  width: 1200px;
+  width: 80vw;
   margin: 0 auto;
 }
 
@@ -456,17 +456,24 @@ header .right {
 }
 
 header .right {
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0))), url("/assets/marsSurface.jpg");
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0)), url("/assets/marsSurface.jpg");
-  background-position: right;
+  height: 100%;
+}
+
+header .right img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 header .text-container {
   position: absolute;
   height: 100vh;
   top: 0;
-  left: calc((100vw - 1200px) / 2);
-  width: 50%;
+  left: 0;
+  -webkit-transform: translateX(calc((100vw - 80vw) / 2));
+          transform: translateX(calc((100vw - 80vw) / 2));
+  width: calc(50% - calc((100vw - 80vw) / 2));
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -509,13 +516,11 @@ header nav li {
 
 section.formSection {
   height: 100vh;
-  width: 100vw;
   position: relative;
 }
 
 section.formSection .wrapper {
   height: 100%;
-  padding: 10% 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -541,7 +546,7 @@ section.formSection .flexDiv {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  height: 100%;
+  height: 50vh;
 }
 
 section.formSection .flexDiv .nonImage {
@@ -628,15 +633,28 @@ section.formSection .flexDiv .imgWrapper {
   height: 100%;
 }
 
+section.formSection .flexDiv .imageText {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translate(-50%, 100%);
+          transform: translate(-50%, 100%);
+}
+
 section.formSection .flexDiv img {
-  width: 100%;
-  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
   display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 
 section.formSection .flexDiv .image-container {
-  max-width: 100%;
-  max-height: 100%;
+  width: 100%;
+  height: 100%;
   position: relative;
   text-align: center;
 }
@@ -690,9 +708,6 @@ section.formSection .enlargedImageWrapper .closeImage {
 }
 
 @media (max-width: 1400px) {
-  header .text-container {
-    left: calc((100vw - 80vw) / 2);
-  }
   header nav li {
     font-size: 5rem;
   }
@@ -705,6 +720,20 @@ section.formSection .enlargedImageWrapper .closeImage {
 }
 
 @media (max-width: 1280px) {
+  section.formSection .wrapper {
+    width: 80vw;
+  }
+  section.formSection .flexDiv .nonImage {
+    width: 40%;
+  }
+  section.formSection .flexDiv .imgWrapper {
+    width: 55%;
+  }
+  section.formSection .flexDiv input,
+  section.formSection .flexDiv select,
+  section.formSection .flexDiv button {
+    width: 80%;
+  }
   header .instructions {
     width: 70%;
   }
@@ -738,6 +767,9 @@ section.formSection .enlargedImageWrapper .closeImage {
 }
 
 @media (max-width: 720px) {
+  h1 {
+    font-size: 8rem;
+  }
   header .right,
   header .left {
     display: none;
@@ -745,9 +777,13 @@ section.formSection .enlargedImageWrapper .closeImage {
   header .text-container {
     position: static;
     width: 100%;
+    margin: 0 auto;
+    -webkit-transform: none;
+            transform: none;
   }
   header .instructions {
-    width: 100%;
+    width: 90%;
+    margin: 0 auto;
     text-align: center;
   }
   header .instructionsBody {
@@ -761,5 +797,22 @@ section.formSection .enlargedImageWrapper .closeImage {
   header nav li {
     padding-top: 2rem;
     font-size: 5rem;
+  }
+}
+
+@media (max-width: 500px) {
+  header nav li {
+    font-size: 4rem;
+  }
+}
+
+@media (max-width: 400px) {
+  h1 {
+    font-size: 6.5rem;
+    word-spacing: 0.5rem;
+    letter-spacing: 0.5rem;
+  }
+  header nav li {
+    font-size: 3.25rem;
   }
 }

@@ -1,6 +1,6 @@
 @import "setup";
 
-$max-width: 1200px;
+$max-width: 80vw;
 
 body {
   font-family: "Poppins", sans-serif;
@@ -17,7 +17,7 @@ h1 {
 }
 
 a {
-  transition: 0.5s ease-in-out;
+  transition: 0.1s ease-in-out;
   &:hover {
     cursor: pointer;
 
@@ -27,6 +27,7 @@ a {
 
 .wrapper {
   width: $max-width;
+  // max-width: 1200px;
   margin: 0 auto;
 }
 
@@ -98,17 +99,24 @@ header {
   }
 
   .right {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0)),
-      url("/assets/marsSurface.jpg");
-    background-position: right;
+    height: 100%;
+    // background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0)),
+    //   url("/assets/marsSurface.jpg");
+    // background-position: right;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
   }
 
   .text-container {
     position: absolute;
     height: 100vh;
     top: 0;
-    left: calc((100vw - #{$max-width}) / 2);
-    width: 50%;
+    left: 0;
+    transform: translateX(calc((100vw - #{$max-width}) / 2));
+    width: calc(50% - calc((100vw - 80vw) / 2));
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -143,12 +151,10 @@ header {
 
 section.formSection {
   height: 100vh;
-  width: 100vw;
   position: relative;
 
   .wrapper {
     height: 100%;
-    padding: 10% 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -163,7 +169,7 @@ section.formSection {
     padding-top: 5rem;
     display: flex;
     justify-content: space-between;
-    height: 100%;
+    height: 50vh;
     .nonImage {
       width: 45%;
       display: flex;
@@ -237,15 +243,25 @@ section.formSection {
       height: 100%;
     }
 
-    img {
-      width: 100%;
-      height: 100%;
-      display: none;
+    .imageText {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translate(-50%, 100%);
     }
 
-    .image-container {
+    img {
       max-width: 100%;
       max-height: 100%;
+      display: none;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .image-container {
+      width: 100%;
+      height: 100%;
       position: relative;
       text-align: center;
 
@@ -294,9 +310,9 @@ section.formSection {
 @media (max-width: 1400px) {
   $max-width: 80vw;
   header {
-    .text-container {
-      left: calc((100vw - #{$max-width}) / 2);
-    }
+    // .text-container {
+    //   left: calc((100vw - #{$max-width}) / 2);
+    // }
     nav {
       li {
         font-size: 5rem;
@@ -316,10 +332,28 @@ section.formSection {
 
 @media (max-width: 1280px) {
   $max-width: 80vw;
-  header {
-    .text-container {
-      // left: calc((100vw - #{$max-width}) / 2);
+  section.formSection {
+    .wrapper {
+      width: $max-width;
     }
+
+    .flexDiv {
+      .nonImage {
+        width: 40%;
+      }
+
+      .imgWrapper {
+        width: 55%;
+      }
+    }
+
+    .flexDiv input,
+    .flexDiv select,
+    .flexDiv button {
+      width: 80%;
+    }
+  }
+  header {
     .instructions {
       width: 70%;
     }
@@ -370,6 +404,9 @@ section.formSection {
 
 @media (max-width: 720px) {
   $max-width: 80vw;
+  h1 {
+    font-size: 8rem;
+  }
   header {
     .right,
     .left {
@@ -379,12 +416,13 @@ section.formSection {
     .text-container {
       position: static;
       width: 100%;
-      // left: 50%;
-      // transform: translate(-50%, -50%);
+      margin: 0 auto;
+      transform: none;
     }
 
     .instructions {
-      width: 100%;
+      width: 90%;
+      margin: 0 auto;
       text-align: center;
     }
 
@@ -405,6 +443,29 @@ section.formSection {
   }
 }
 
-@media (max-width: 890px) {
+@media (max-width: 500px) {
   $max-width: 80vw;
+
+  header {
+    nav {
+      li {
+        font-size: 4rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  h1 {
+    font-size: 6.5rem;
+    word-spacing: 0.5rem;
+    letter-spacing: 0.5rem;
+  }
+  header {
+    nav {
+      li {
+        font-size: 3.25rem;
+      }
+    }
+  }
 }
