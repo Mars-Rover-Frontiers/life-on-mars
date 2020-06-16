@@ -424,6 +424,10 @@ section.formSection {
   }
 
   section.formSection {
+    h2 {
+      text-align: center;
+      padding-top: 2rem;
+    }
     .roverDescription {
       p {
         margin-bottom: 1rem;
@@ -500,7 +504,11 @@ section.formSection {
     .flexDiv {
       .nonImage {
         height: auto;
-        padding: 5rem 0;
+        padding: 0;
+      }
+
+      form {
+        padding-bottom: 1rem;
       }
 
       .imgWrapper {
@@ -528,6 +536,15 @@ section.formSection {
   section.formSection {
     h2 {
       font-size: 2.75rem;
+    }
+
+    .flexDiv {
+      padding-top: 1rem;
+
+      label {
+        font-size: 2rem;
+        text-align: center;
+      }
     }
   }
 }

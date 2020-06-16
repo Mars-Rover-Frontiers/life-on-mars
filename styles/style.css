@@ -794,6 +794,10 @@ section.formSection .enlargedImageWrapper .closeImage {
   header .right {
     width: 35%;
   }
+  section.formSection h2 {
+    text-align: center;
+    padding-top: 2rem;
+  }
   section.formSection .roverDescription p {
     margin-bottom: 1rem;
   }
@@ -850,7 +854,10 @@ section.formSection .enlargedImageWrapper .closeImage {
   }
   section.formSection .flexDiv .nonImage {
     height: auto;
-    padding: 5rem 0;
+    padding: 0;
+  }
+  section.formSection .flexDiv form {
+    padding-bottom: 1rem;
   }
   section.formSection .flexDiv .imgWrapper {
     width: 100%;
@@ -869,5 +876,12 @@ section.formSection .enlargedImageWrapper .closeImage {
   }
   section.formSection h2 {
     font-size: 2.75rem;
+  }
+  section.formSection .flexDiv {
+    padding-top: 1rem;
+  }
+  section.formSection .flexDiv label {
+    font-size: 2rem;
+    text-align: center;
   }
 }
