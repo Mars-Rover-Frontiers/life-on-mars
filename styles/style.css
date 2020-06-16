@@ -340,6 +340,8 @@ textarea {
 
 body {
   font-family: "Poppins", sans-serif;
+  background-color: black;
+  color: white;
 }
 
 h1 {
@@ -350,8 +352,18 @@ h1 {
   letter-spacing: 1rem;
 }
 
+a {
+  -webkit-transition: 0.1s ease-in-out;
+  transition: 0.1s ease-in-out;
+}
+
+a:hover {
+  cursor: pointer;
+  color: red;
+}
+
 .wrapper {
-  width: 1200px;
+  width: 80vw;
   margin: 0 auto;
 }
 
@@ -369,23 +381,56 @@ h1 {
   text-align: center;
 }
 
-.videoHero button {
-  color: black;
+.videoHero .scrollInfo {
+  text-align: center;
+  color: white;
+  background: none;
   border: none;
   border-radius: 20px;
   outline: none;
   width: 15rem;
-  font-size: 3rem;
   height: 5rem;
   position: absolute;
   left: 50%;
-  bottom: 20%;
+  bottom: 2%;
   -webkit-transform: translateX(-50%) translateY(-50%);
           transform: translateX(-50%) translateY(-50%);
 }
 
-.videoHero i {
-  height: 100px;
+.videoHero .scrollInfo i {
+  padding-bottom: 1rem;
+  -webkit-animation: 4s ease-out mouse-jump infinite;
+          animation: 4s ease-out mouse-jump infinite;
+}
+
+@-webkit-keyframes mouse-jump {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  50% {
+    -webkit-transform: translateY(-25px) scale(1.25);
+            transform: translateY(-25px) scale(1.25);
+  }
+  to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes mouse-jump {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  50% {
+    -webkit-transform: translateY(-25px) scale(1.25);
+            transform: translateY(-25px) scale(1.25);
+  }
+  to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
 }
 
 #myVideo {
@@ -411,14 +456,37 @@ header .right {
 }
 
 header .right {
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0))), url("/assets/marsSurface.jpg");
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0)), url("/assets/marsSurface.jpg");
+  height: 100%;
 }
 
-header .wrapper {
+header .right img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+header .textContainer {
   position: absolute;
+  height: 100vh;
   top: 0;
-  left: calc((100vw - 1200px) / 2);
+  left: 0;
+  -webkit-transform: translateX(calc((100vw - 80vw) / 2));
+          transform: translateX(calc((100vw - 80vw) / 2));
+  width: calc(50% - calc((100vw - 80vw) / 2));
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
 }
 
 header .white {
@@ -427,7 +495,7 @@ header .white {
 
 header .instructions {
   margin: 1.5rem 0;
-  width: 45%;
+  width: 60%;
 }
 
 header .instructions .instructionsHeading {
@@ -448,9 +516,21 @@ header nav li {
 
 section.formSection {
   height: 100vh;
-  width: 100vw;
-  padding: 7.5rem 0;
   position: relative;
+}
+
+section.formSection .wrapper {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 section.formSection h2 {
@@ -466,23 +546,42 @@ section.formSection .flexDiv {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  height: 65vh;
 }
 
 section.formSection .flexDiv .nonImage {
   width: 45%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+section.formSection .flexDiv .roverDescription h3 {
+  margin: 0.5rem 0;
+}
+
+section.formSection .flexDiv .roverDescription p {
+  text-align: center;
 }
 
 section.formSection .flexDiv .roverDescription h3,
 section.formSection .flexDiv .roverDescription p {
   display: inline-block;
-  width: 45%;
   text-transform: lowercase;
-  margin: 0.5rem 0;
+  width: 100%;
   font-size: 1.25rem;
 }
 
 section.formSection .flexDiv form {
   width: 100%;
+  padding-bottom: 5rem;
 }
 
 section.formSection .flexDiv fieldset {
@@ -516,6 +615,8 @@ section.formSection .flexDiv select {
   -o-appearance: none;
   appearance: none;
   border: 1px solid coral;
+  color: white;
+  background-color: black;
 }
 
 section.formSection .flexDiv select:focus {
@@ -524,37 +625,61 @@ section.formSection .flexDiv select:focus {
 }
 
 section.formSection .flexDiv button {
-  -webkit-box-shadow: inset 0px 1px 0px 0px #cf866c;
-          box-shadow: inset 0px 1px 0px 0px #cf866c;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(5%, #d0451b), to(#bc3315));
-  background: linear-gradient(to bottom, #d0451b 5%, #bc3315 100%);
-  background-color: #d0451b;
+  background-color: red;
   border-radius: 3px;
-  border: 1px solid #942911;
+  border: none;
   display: inline-block;
   cursor: pointer;
   color: #ffffff;
-  font-family: Arial;
   font-size: 13px;
-  padding: 6px 24px;
+  padding: 0.5rem 2rem;
   text-decoration: none;
   text-shadow: 0px 1px 0px #854629;
 }
 
 section.formSection .flexDiv .imgWrapper {
   width: 45%;
+  height: 100%;
+}
+
+section.formSection .flexDiv .imageText {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translate(-50%, 100%);
+          transform: translate(-50%, 100%);
 }
 
 section.formSection .flexDiv img {
   max-width: 100%;
   max-height: 100%;
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 
-section.formSection .flexDiv .image {
+section.formSection .flexDiv .imageContainer {
   width: 100%;
   height: 100%;
-  background-position: center;
-  background-size: cover;
+  position: relative;
+  text-align: center;
+}
+
+section.formSection .flexDiv .imageContainer p {
+  display: none;
+}
+
+section.formSection .flexDiv .icon {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: -1;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 
 section.formSection .enlargedImageWrapper {
@@ -565,7 +690,7 @@ section.formSection .enlargedImageWrapper {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.8);
   position: fixed;
   width: 100%;
   height: 100%;
@@ -576,12 +701,173 @@ section.formSection .enlargedImageWrapper {
 }
 
 section.formSection .enlargedImageWrapper .enlargedImage {
-  max-width: 90%;
-  max-height: 90%;
+  width: 90%;
+  height: 90%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 
 section.formSection .enlargedImageWrapper .closeImage {
   position: absolute;
   top: 0;
   right: 0;
+}
+
+@media (max-width: 1400px) {
+  header nav li {
+    font-size: 5rem;
+  }
+  header .instructions .instructionsHeading {
+    font-size: 1.85rem;
+  }
+  header .instructions .instructionsBody {
+    font-size: 1.75rem;
+  }
+}
+
+@media (max-width: 1280px) {
+  section.formSection .wrapper {
+    width: 80vw;
+  }
+  section.formSection .flexDiv .nonImage {
+    width: 40%;
+  }
+  section.formSection .flexDiv .imgWrapper {
+    width: 55%;
+  }
+  section.formSection .flexDiv input,
+  section.formSection .flexDiv select,
+  section.formSection .flexDiv button {
+    width: 100%;
+  }
+  header .instructions {
+    width: 70%;
+  }
+  header nav li {
+    font-size: 4rem;
+  }
+  header .instructions .instructionsHeading {
+    font-size: 1.75rem;
+  }
+  header .instructions .instructionsBody {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 980px) {
+  header .left {
+    width: 55%;
+  }
+  header .right {
+    width: 45%;
+  }
+  section.formSection {
+    height: auto;
+  }
+  section.formSection .flexDiv {
+    height: auto;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  section.formSection .flexDiv .nonImage {
+    width: 100%;
+    height: 60vh;
+  }
+  section.formSection .flexDiv .imgWrapper {
+    width: 100%;
+    height: 75vh;
+  }
+}
+
+@media (max-width: 890px) {
+  header .left {
+    width: 65%;
+  }
+  header .right {
+    width: 35%;
+  }
+  section.formSection .roverDescription p {
+    margin-bottom: 1rem;
+  }
+  section.formSection .roverDescription h3,
+  section.formSection .roverDescription p {
+    text-align: center;
+  }
+}
+
+@media (max-width: 720px) {
+  h1 {
+    font-size: 8rem;
+  }
+  header .right,
+  header .left {
+    display: none;
+  }
+  header .textContainer {
+    position: static;
+    width: 100%;
+    margin: 0 auto;
+    -webkit-transform: none;
+            transform: none;
+  }
+  header .instructions {
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+  }
+  header .instructionsBody {
+    line-height: 4rem;
+  }
+  header nav {
+    padding-top: 2rem;
+    width: 100%;
+    text-align: center;
+  }
+  header nav li {
+    padding-top: 2rem;
+    font-size: 5rem;
+  }
+}
+
+@media (max-width: 500px) {
+  h1 {
+    margin-top: 5rem;
+  }
+  header nav li {
+    font-size: 4rem;
+  }
+  section.formSection h2 {
+    text-align: center;
+    font-size: 3rem;
+  }
+  section.formSection .flexDiv .nonImage {
+    height: auto;
+    padding: 5rem 0;
+  }
+  section.formSection .flexDiv .imgWrapper {
+    width: 100%;
+    height: 50vh;
+  }
+}
+
+@media (max-width: 400px) {
+  h1 {
+    font-size: 6.5rem;
+    word-spacing: 0.5rem;
+    letter-spacing: 0.5rem;
+  }
+  header nav li {
+    font-size: 3.25rem;
+  }
+  section.formSection h2 {
+    font-size: 2.75rem;
+  }
 }
