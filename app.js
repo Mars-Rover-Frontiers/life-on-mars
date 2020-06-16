@@ -10,7 +10,6 @@ $(document).ready(function () {
   app.currentSol = "";
 
   // Element Selectors
-
   app.formSection = $(".formSection");
   app.roverHeading = $("#roverName");
   app.cameraSelection = $("#camera");
@@ -20,6 +19,7 @@ $(document).ready(function () {
   app.distanceCovered = $("#distanceCovered");
   app.status = $("#status");
   app.image = $("#image");
+  app.imageContainer = $("#imageContainer");
   app.spinner = $("#spinner");
   app.imageText = $("#imageText");
   app.enlargedImageWrapper = $("#enlargedImageWrapper");
@@ -72,6 +72,12 @@ $(document).ready(function () {
     app.currentSol = Math.floor(Math.random() * 1000) + 1;
     app.currentCamera = app.cameraSelection.val();
     app.makeRequest();
+    $([document.documentElement, document.body]).animate(
+      {
+        scrollTop: app.imageContainer.offset().top,
+      },
+      1000
+    );
   });
 
   app.image.click((e) => {
