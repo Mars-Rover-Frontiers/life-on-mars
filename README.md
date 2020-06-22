@@ -29,4 +29,6 @@ To show a understanding of jQuery, DOM manipulation, error handling, and UI desi
 
 ## Authors
 
- [**Satvir Sandhu**](https://github.com/satv1r) and [**Allan Limitless**](https://github.com/AllanLimitless) 
+ [**Satvir Sandhu**](https://github.com/satv1r) and [**Allan Limitless**](https://github.com/AllanLimitless)
+ 
+### [View app here](https://life-on-mars.netlify.app/)  
