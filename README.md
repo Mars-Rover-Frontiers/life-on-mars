@@ -25,10 +25,13 @@ To show a understanding of jQuery, DOM manipulation, error handling, and UI desi
 ## Built With
 
 [jQuery] - JavaScript Library used
+
 [Mars Rovers Photos] - The Nasa API used
+
+#### [View app here](https://life-on-mars.netlify.app/)  
+
 
 ## Authors
 
  [**Satvir Sandhu**](https://github.com/satv1r) and [**Allan Limitless**](https://github.com/AllanLimitless)
  
-### [View app here](https://life-on-mars.netlify.app/)  
