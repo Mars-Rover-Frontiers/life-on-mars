@@ -3,10 +3,7 @@
 
 ## Project Description
 
-- Track down an API that is of interest of you and work through the documentation to see if the information you want is available.
-
-- Be sure that the API DOES NOT require oAuth authentication. Requiring oAuth doesn't preclude you from using the API but it adds another layer of complexity to the project.
-
+Our task is to collaboratively create a web application using JavaScript and an API.
 
 ## Project objective
 
@@ -25,5 +22,11 @@ To show a understanding of jQuery, DOM manipulation, error handling, and UI desi
 - Errors are handled effectively
 - Consistent class naming convention is used throughout
 
+## Built With
+
+[jQuery] - JavaScript Library used
+[Mars Rovers Photos] - The Nasa API used
+
 ## Authors
- [**Satvir Sandhu**](https://google.ca) and Allan Limitless 
+
+ [**Satvir Sandhu**](https://github.com/satv1r) and [**Allan Limitless**](https://github.com/AllanLimitless) 
